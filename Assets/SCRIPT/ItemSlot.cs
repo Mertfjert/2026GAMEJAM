@@ -74,7 +74,7 @@ public class ItemSlot : MonoBehaviour
 
     private int CheckIngredient(GameObject collidedIngredient)
     {
-        if (collidedIngredient.tag == "Zuccini")
+        if (collidedIngredient.tag == "Zucchini")
         {
             return 1;
         }
@@ -82,23 +82,23 @@ public class ItemSlot : MonoBehaviour
         {
             return 2;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Mushrooms")
         {
             return 3;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Red Onion")
         {
             return 4;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Onion")
         {
             return 5;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Bell Pepper")
         {
             return 6;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Corn")
         {
             return 7;
         }
