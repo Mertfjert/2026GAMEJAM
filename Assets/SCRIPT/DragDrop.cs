@@ -14,6 +14,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         originalPosition = rectTransform.anchoredPosition;
+
+        // Kontrollera om canvasGroup finns innan vi försöker använda den
+        if (canvasGroup == null)
+        {
+            Debug.LogWarning("CanvasGroup saknas på objektet: " + gameObject.name);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -25,8 +31,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         if (isLocked) return;  // Prevent dragging if locked
         Debug.Log("OnBeginDrag");
-        canvasGroup.alpha = 0.6f;  // Make item semi-transparent while dragging
-        canvasGroup.blocksRaycasts = false;  // Allow raycasts to pass through while dragging
+
+        // Kontrollera om canvasGroup finns innan vi ändrar dess egenskaper
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 0.6f;  // Make item semi-transparent while dragging
+            canvasGroup.blocksRaycasts = false;  // Allow raycasts to pass through while dragging
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -40,8 +51,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         if (isLocked) return;  // Prevent actions if locked
         Debug.Log("OnEndDrag");
-        canvasGroup.alpha = 1f;  // Restore opacity
-        canvasGroup.blocksRaycasts = true;  // Restore raycast blocking
+
+        // Kontrollera om canvasGroup finns innan vi återställer dess egenskaper
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1f;  // Restore opacity
+            canvasGroup.blocksRaycasts = true;  // Restore raycast blocking
+        }
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -49,7 +65,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("OnDrop");
         if (!isLocked)
         {
-            StartCoroutine(LockItemForSeconds(1));  // Lock the item for 1 seconds
+            StartCoroutine(LockItemForSeconds(1));  // Lock the item for 1 second
         }
     }
 
