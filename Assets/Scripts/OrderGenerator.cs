@@ -1,30 +1,32 @@
-
 using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour
 {
-    int[] generatedOrder;
+    public int[] generatedOrder;
+    public ItemSlot itemSlot;
 
     private void Start()
     {
         generatedOrder = GenerateOrder();
+ 
     }
     private void Update()
     {
-        
-        for (int i = 0; i == generatedOrder.Length; i++)
+        for (int i = 0; i < generatedOrder.Length; i++)
         {
-            Debug.Log(generatedOrder[i]);
+            Debug.Log(generatedOrder[i].ToString());
         }
+
     }
 
 
-    public static int[] GenerateOrder()
+    // Genererar en array från 3 till 7 storlek
+    public int[] GenerateOrder()
     {
         int orderLength = Random.Range(3, 8);
         int[] ingredientArray = new int[orderLength];
 
-        for (int i = 0; i == orderLength; i++)
+        for (int i = 0; i < ingredientArray.Length; i++)
         {
             int ingredientNumber = Random.Range(1, 7);
             
