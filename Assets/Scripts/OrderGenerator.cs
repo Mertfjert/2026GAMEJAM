@@ -1,8 +1,10 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour
 {
-    public int[] generatedOrder;
+    List<int> generatedOrder = new List<int>();
     public ItemSlot itemSlot;
 
     private void Start()
@@ -12,58 +14,59 @@ public class OrderGenerator : MonoBehaviour
     }
     private void Update()
     {
-        for (int i = 0; i < generatedOrder.Length; i++)
+        foreach (var item in generatedOrder)
         {
-            Debug.Log(generatedOrder[i].ToString());
+            Debug.Log(item);
         }
+            
 
     }
 
 
     // Genererar en array från 3 till 7 storlek
-    public int[] GenerateOrder()
+    public List<int> GenerateOrder()
     {
-        int orderLength = Random.Range(3, 8);
-        int[] ingredientArray = new int[orderLength];
+        int orderLength = UnityEngine.Random.Range(3, 8);
+        List<int> generateOrder = new List<int>();
 
-        for (int i = 0; i < ingredientArray.Length; i++)
+        for (int i = 0; i < orderLength; i++)
         {
-            int ingredientNumber = Random.Range(1, 7);
+            int ingredientNumber = UnityEngine.Random.Range(1, 7);
             
 
             switch (ingredientNumber)
             {
                 case 1:
                     // return zuccini
-                    ingredientArray[i] = ingredientNumber;
+                    generateOrder.Add(ingredientNumber);
                     break;
                 case 2:
                     // return tomato
-                    ingredientArray[i] = ingredientNumber;
+                    generateOrder.Add(ingredientNumber);
                     break;
                 case 3:
                     // return mushroom
-                    ingredientArray[i] = ingredientNumber;
+                    generateOrder.Add(ingredientNumber);
                     break;
                 case 4:
                     // return red onion
-                    ingredientArray[i] = ingredientNumber;  
+                    generateOrder.Add(ingredientNumber);
                     break;
                 case 5:
                     // return onion
-                    ingredientArray[i] = ingredientNumber;
+                    generateOrder.Add(ingredientNumber);
                     break;
                 case 6:
                     // return bell pepper
-                    ingredientArray[i] = ingredientNumber;
+                    generateOrder.Add(ingredientNumber);
                     break;
                 case 7:
                     // return corn
-                    ingredientArray[i] = ingredientNumber;
+                    generateOrder.Add(ingredientNumber);
                     break;
             }
 
         }
-        return ingredientArray;
+        return generateOrder;
     }
 }
