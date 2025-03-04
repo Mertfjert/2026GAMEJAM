@@ -1,27 +1,27 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 
 public class GrillController : MonoBehaviour
 {
-    public Sprite grillOffSprite;  // Bild n‰r grillen ‰r av
-    public Sprite grillOnSprite;   // Bild n‰r grillen ‰r pÂ
-    public AudioSource grillSound; // Ljudk‰lla fˆr grill-ljudet
-    private bool isGrillOn = false; // HÂller koll pÂ om grillen ‰r pÂ eller av
-    private SpriteRenderer spriteRenderer;
+    public Sprite grillOffSprite;  // Bild n√§r grillen √§r av
+    public Sprite grillOnSprite;   // Bild n√§r grillen √§r p√•
+    public AudioSource grillSound; // Ljudk√§lla f√∂r grill-ljudet
+    private bool isGrillOn = false; // H√•ller koll p√• om grillen √§r p√• eller av
+    private Image spriteRenderer;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        GetComponent<Button>().onClick.AddListener(ToggleGrill);
+        spriteRenderer = GetComponent<Image>();
     }
 
-    void ToggleGrill()
+    // üî• G√∂r metoden PUBLIC s√• den syns i Unitys OnClick-lista
+    public void ToggleGrill()
     {
-        isGrillOn = !isGrillOn; // V‰xlar mellan av och pÂ
+        isGrillOn = !isGrillOn; // V√§xlar mellan av och p√•
 
         if (isGrillOn)
         {
-            spriteRenderer.sprite = grillOnSprite; // Byter till "pÂ" sprite
+            spriteRenderer.sprite = grillOnSprite; // Byter till "p√•" sprite
             grillSound.Play();  // Startar grill-ljudet
         }
         else
@@ -31,4 +31,5 @@ public class GrillController : MonoBehaviour
         }
     }
 }
+
 
