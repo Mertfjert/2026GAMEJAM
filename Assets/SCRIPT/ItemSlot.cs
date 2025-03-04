@@ -10,7 +10,11 @@ public class ItemSlot : MonoBehaviour
 
             // Move the item to the slot position
             RectTransform itemRectTransform = collision.gameObject.GetComponent<RectTransform>();
-            itemRectTransform.anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            RectTransform rect = GetComponent<RectTransform>();
+            itemRectTransform.anchorMax = rect.anchorMax;
+            itemRectTransform.anchorMin = rect.anchorMin;
+            itemRectTransform.pivot = rect.pivot;
+            itemRectTransform.anchoredPosition = rect.anchoredPosition;
 
             // Lock the item in place for 1 seconds
             dragDrop.StartCoroutine(LockItem(dragDrop, 1));
