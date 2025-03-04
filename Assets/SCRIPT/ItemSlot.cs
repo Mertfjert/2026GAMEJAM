@@ -70,4 +70,37 @@ public class ItemSlot : MonoBehaviour
             ClearSlot();  
         }
     }
+
+    private int CheckIngredient(GameObject collidedIngredient)
+    {
+        if (collidedIngredient.tag == "Zuccini")
+        {
+            return 1;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 2;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 3;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 4;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 5;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 6;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 7;
+        }
+        return 0;
+    }
 }
