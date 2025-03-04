@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class ItemSlot : MonoBehaviour
 {
-    private GameObject currentItem;  
+    public int[] detectedIngredients;
+    public int ingredientOrder = 0;
+    private GameObject currentItem;
+    public OrderGenerator orderGenerator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,6 +35,12 @@ public class ItemSlot : MonoBehaviour
             currentItem = collision.gameObject;
 
             print($"Item {collision.gameObject.name} added to the slot.");
+
+            detectedIngredients[ingredientOrder] = CheckIngredient(collision.gameObject);
+            Debug.Log(detectedIngredients[ingredientOrder]);
+            ingredientOrder += 1;
+
+            
         }
     }
 
@@ -73,7 +82,7 @@ public class ItemSlot : MonoBehaviour
 
     private int CheckIngredient(GameObject collidedIngredient)
     {
-        if (collidedIngredient.tag == "Zuccini")
+        if (collidedIngredient.tag == "Zucchini")
         {
             return 1;
         }
@@ -81,23 +90,23 @@ public class ItemSlot : MonoBehaviour
         {
             return 2;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Mushroom")
         {
             return 3;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Red Onion")
         {
             return 4;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Onion")
         {
             return 5;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Bell Pepper")
         {
             return 6;
         }
-        else if (collidedIngredient.tag == "Tomato")
+        else if (collidedIngredient.tag == "Corn")
         {
             return 7;
         }
