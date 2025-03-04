@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
@@ -8,17 +9,36 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     private bool isLocked = false;  // To prevent dragging during lock
     private Vector2 originalPosition;  // To snap back if needed
+    private Canvas canvas;
+    public bool isSkewered = false;
+    public Sprite skewerSprite;
+    Sprite originalSprite;
+    Image renderer;
+    
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        renderer = GetComponent<Image>();
+        canvas = FindObjectOfType<Canvas>();
         originalPosition = rectTransform.anchoredPosition;
-
+        originalSprite = renderer.sprite;
         // Kontrollera om canvasGroup finns innan vi försöker använda den
         if (canvasGroup == null)
         {
             Debug.LogWarning("CanvasGroup saknas på objektet: " + gameObject.name);
+        }
+    }
+
+    private void Update()
+    {
+        if (isSkewered == true)
+        {
+            renderer.sprite = skewerSprite;
+        }else if (isSkewered == false)
+        {
+            renderer.sprite = originalSprite;
         }
     }
 
@@ -44,7 +64,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         if (isLocked) return;  // Prevent dragging if locked
         Debug.Log("OnDrag");
-        rectTransform.anchoredPosition += eventData.delta;
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
