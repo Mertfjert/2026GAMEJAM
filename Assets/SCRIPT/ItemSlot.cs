@@ -1,0 +1,63 @@
+using UnityEngine;
+
+public class ItemSlot : MonoBehaviour
+{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<DragDrop>(out DragDrop dragDrop))
+        {
+            print($"Collided with {collision.gameObject.name}");
+
+            // Move the item to the slot position
+            RectTransform itemRectTransform = collision.gameObject.GetComponent<RectTransform>();
+            RectTransform rect = GetComponent<RectTransform>();
+            itemRectTransform.anchorMax = rect.anchorMax;
+            itemRectTransform.anchorMin = rect.anchorMin;
+            itemRectTransform.pivot = rect.pivot;
+            itemRectTransform.anchoredPosition = rect.anchoredPosition;
+
+            // Lock the item in place for 1 seconds
+            dragDrop.StartCoroutine(LockItem(dragDrop, 1));
+        }
+    }
+
+    private System.Collections.IEnumerator LockItem(DragDrop dragDrop, float duration)
+    {
+        dragDrop.SetLock(true);  // Lock the item
+        yield return new WaitForSeconds(duration);
+        dragDrop.SetLock(false);  // Unlock the item after 1 seconds
+    }
+
+    private int CheckIngredient(GameObject collidedIngredient)
+    {
+        if (collidedIngredient.tag == "Zuccini")
+        {
+            return 1;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 2;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 3;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 4;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 5;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 6;
+        }
+        else if (collidedIngredient.tag == "Tomato")
+        {
+            return 7;
+        }
+        return 0;
+    }
+}
