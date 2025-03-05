@@ -72,8 +72,14 @@ public class ItemSlot : MonoBehaviour
             {
                 Debug.Log(item);
             }
+            CheckCompletion(ingredientsContact);
 
         }
+    }
+
+    private void Update()
+    {
+        CheckCompletion(ingredientsContact);
     }
 
 
@@ -156,5 +162,13 @@ public class ItemSlot : MonoBehaviour
             return 8;
         }
         return 0;
+    }
+
+    private void CheckCompletion(List<int> ingredientsOnSkewer)
+    {
+        if (ingredientsOnSkewer == orderGenerator.generatedOrder)
+        {
+            Destroy(orderGenerator);
+        }
     }
 }

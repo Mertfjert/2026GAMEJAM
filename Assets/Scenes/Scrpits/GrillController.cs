@@ -8,6 +8,7 @@ public class GrillController : MonoBehaviour
     public AudioSource grillSound; // Ljudkälla för grill-ljudet
     private bool isGrillOn = false; // Håller koll på om grillen är på eller av
     private Image spriteRenderer;
+    public GameObject grillAnim;
 
     void Start()
     {
@@ -21,13 +22,15 @@ public class GrillController : MonoBehaviour
 
         if (isGrillOn)
         {
-            spriteRenderer.sprite = grillOnSprite; // Byter till "på" sprite
+            //spriteRenderer.sprite = grillOnSprite; // Byter till "på" sprite
             grillSound.Play();  // Startar grill-ljudet
+            grillAnim.SetActive(true);
         }
         else
         {
-            spriteRenderer.sprite = grillOffSprite; // Byter till "av" sprite
+            //spriteRenderer.sprite = grillOffSprite; // Byter till "av" sprite
             grillSound.Stop();  // Stoppar grill-ljudet
+            grillAnim.SetActive(false);
         }
     }
 }
