@@ -15,7 +15,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     Sprite originalSprite;
     Image renderer;
 
-    
+
     private Vector2 snapPosition = new Vector2(-336, -137);
 
     private void Awake()
@@ -57,7 +57,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if (isLocked) return;
         Debug.Log("OnBeginDrag");
 
-        
+
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 0.6f;
@@ -86,8 +86,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
 
 
-        
-        rectTransform.anchoredPosition = snapPosition;
+
+        //rectTransform.anchoredPosition = snapPosition;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -106,7 +106,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         isLocked = false;
     }
 
-    
+
     public void SetLock(bool lockStatus)
     {
         isLocked = lockStatus;
