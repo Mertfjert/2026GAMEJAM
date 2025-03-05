@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6828977699342079054
+--- !u!1 &8643843377809821703
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6636088993434456622}
-  - component: {fileID: 6521940109960364483}
-  - component: {fileID: 3491861679133932208}
-  - component: {fileID: 283941897840827202}
-  - component: {fileID: 5288312559629613543}
-  - component: {fileID: 2061985127504658774}
-  - component: {fileID: 2763973092091180367}
+  - component: {fileID: 6551298232753840983}
+  - component: {fileID: 1408430530202738116}
+  - component: {fileID: 7994962592344142796}
+  - component: {fileID: 1221569927938719239}
+  - component: {fileID: 7464012538456886262}
+  - component: {fileID: 2211217166868361624}
   m_Layer: 5
-  m_Name: Red Onion
-  m_TagString: Red Onion
+  m_Name: ItemBase
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6636088993434456622
+--- !u!224 &6551298232753840983
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
+  m_GameObject: {fileID: 8643843377809821703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -38,24 +37,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460, y: -233.75}
+  m_AnchoredPosition: {x: -508, y: -137}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6521940109960364483
+--- !u!222 &1408430530202738116
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
+  m_GameObject: {fileID: 8643843377809821703}
   m_CullTransparentMesh: 1
---- !u!114 &3491861679133932208
+--- !u!114 &7994962592344142796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
+  m_GameObject: {fileID: 8643843377809821703}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -69,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4978784327799437767, guid: 6f6ceb87e119501499941a05864d35c1, type: 3}
+  m_Sprite: {fileID: 6093979138507837842, guid: 718520f5acddb504ab0fd4faf393b36f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -79,28 +78,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &283941897840827202
+--- !u!114 &1221569927938719239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
+  m_GameObject: {fileID: 8643843377809821703}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSkewered: 0
-  skewerSprite: {fileID: 0}
---- !u!50 &5288312559629613543
+  skewerSprite: {fileID: 2986196402773899804, guid: 36f00042911860c419b680bd3166ba1c, type: 3}
+--- !u!50 &7464012538456886262
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
+  m_GameObject: {fileID: 8643843377809821703}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -120,13 +119,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &2061985127504658774
+--- !u!61 &2211217166868361624
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
+  m_GameObject: {fileID: 8643843377809821703}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -166,15 +165,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
---- !u!225 &2763973092091180367
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828977699342079054}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0

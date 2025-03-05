@@ -14,7 +14,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public Sprite skewerSprite;
     Sprite originalSprite;
     Image renderer;
+
     
+    private Vector2 snapPosition = new Vector2(-336, -137);
 
     private void Awake()
     {
@@ -24,7 +26,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvas = FindObjectOfType<Canvas>();
         originalPosition = rectTransform.anchoredPosition;
         originalSprite = renderer.sprite;
-        // Kontrollera om canvasGroup finns innan vi försöker använda den
+
         if (canvasGroup == null)
         {
             Debug.LogWarning("CanvasGroup saknas på objektet: " + gameObject.name);
@@ -33,12 +35,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private void Update()
     {
-        if (isSkewered == true)
+        if (isSkewered)
         {
             renderer.sprite = skewerSprite;
-        }else if (isSkewered == false)
+            renderer.SetNativeSize();
+        }
+        else
         {
             renderer.sprite = originalSprite;
+            renderer.SetNativeSize();
         }
     }
 
@@ -49,35 +54,40 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (isLocked) return;  // Prevent dragging if locked
+        if (isLocked) return;
         Debug.Log("OnBeginDrag");
 
-        // Kontrollera om canvasGroup finns innan vi ändrar dess egenskaper
+        
         if (canvasGroup != null)
         {
-            canvasGroup.alpha = 0.6f;  // Make item semi-transparent while dragging
-            canvasGroup.blocksRaycasts = false;  // Allow raycasts to pass through while dragging
+            canvasGroup.alpha = 0.6f;
+            canvasGroup.blocksRaycasts = false;
         }
+
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (isLocked) return;  // Prevent dragging if locked
+        if (isLocked) return;
         Debug.Log("OnDrag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (isLocked) return;  // Prevent actions if locked
+        if (isLocked) return;
         Debug.Log("OnEndDrag");
 
-        // Kontrollera om canvasGroup finns innan vi återställer dess egenskaper
+
         if (canvasGroup != null)
         {
-            canvasGroup.alpha = 1f;  // Restore opacity
-            canvasGroup.blocksRaycasts = true;  // Restore raycast blocking
+            canvasGroup.alpha = 1f;
+            canvasGroup.blocksRaycasts = true;
         }
+
+
+        
+        rectTransform.anchoredPosition = snapPosition;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -85,7 +95,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("OnDrop");
         if (!isLocked)
         {
-            StartCoroutine(LockItemForSeconds(1));  // Lock the item for 1 second
+            StartCoroutine(LockItemForSeconds(1));
         }
     }
 
@@ -96,9 +106,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         isLocked = false;
     }
 
-    // ?? New Method to Fix the Error
+    
     public void SetLock(bool lockStatus)
     {
         isLocked = lockStatus;
+        Debug.Log("Lock status ändrad till: " + lockStatus);
     }
+
 }
