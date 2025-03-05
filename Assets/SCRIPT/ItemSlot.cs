@@ -113,6 +113,10 @@ public class ItemSlot : MonoBehaviour
         {
             return 7;
         }
+        else if (collidedIngredient.tag == "Meatslab")
+        {
+            return 8;
+        }
         return 0;
     }
 }

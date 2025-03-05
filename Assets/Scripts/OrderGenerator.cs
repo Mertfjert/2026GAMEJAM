@@ -64,6 +64,10 @@ public class OrderGenerator : MonoBehaviour
                     // return corn
                     generateOrder.Add(ingredientNumber);
                     break;
+                case 8:
+                    // return corn
+                    generateOrder.Add(ingredientNumber);
+                    break;
             }
 
         }
