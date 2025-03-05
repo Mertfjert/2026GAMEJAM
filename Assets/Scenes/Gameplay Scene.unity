@@ -578,9 +578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b012b775d498f594dbd908037606e6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectedIngredients: 
-  ingredientOrder: 0
-  orderGenerator: {fileID: 0}
+  ingredientsContact: 
+  orderGenerator: {fileID: 1749097906}
 --- !u!225 &783463009
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -793,7 +792,7 @@ GameObject:
   - component: {fileID: 1997596774}
   m_Layer: 5
   m_Name: Item
-  m_TagString: Untagged
+  m_TagString: Tomato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -829,6 +828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSkewered: 0
+  skewerSprite: {fileID: 0}
 --- !u!114 &1997596770
 MonoBehaviour:
   m_ObjectHideFlags: 0

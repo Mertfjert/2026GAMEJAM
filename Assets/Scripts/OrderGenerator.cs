@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour
 {
-    List<int> generatedOrder = new List<int>();
+    public List<int> generatedOrder = new List<int>();
     public ItemSlot itemSlot;
 
     private void Start()
