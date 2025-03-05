@@ -1,11 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class SkewerPosition
+{
+   public RectTransform transform;
+   public bool isOccupied;
+   public GameObject obj;
+}
+
+
 public class ItemSlot : MonoBehaviour
 {
     public List<int> ingredientsContact = new List<int>();
+    public SkewerPosition[] positions;
     private GameObject currentItem;
     public OrderGenerator orderGenerator;
+   
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,27 +25,44 @@ public class ItemSlot : MonoBehaviour
         if (collision.gameObject.TryGetComponent<DragDrop>(out DragDrop dragDrop))
         {
 
-            if (currentItem != null)
+          /*  if (currentItem != null)
             {
                 print("Slot already contains an item!");
                 return;
-            }
+            }*/
 
 
             RectTransform itemRectTransform = collision.gameObject.GetComponent<RectTransform>();
-            RectTransform rect = GetComponent<RectTransform>();
+            // RectTransform rect = GetComponent<RectTransform>();
 
-            itemRectTransform.anchorMax = rect.anchorMax;
-            itemRectTransform.anchorMin = rect.anchorMin;
-            itemRectTransform.pivot = rect.pivot;
-            itemRectTransform.anchoredPosition = rect.anchoredPosition;
+            /*     itemRectTransform.anchorMax = rect.anchorMax;
+                 itemRectTransform.anchorMin = rect.anchorMin;
+                 itemRectTransform.pivot = rect.pivot;
+                 itemRectTransform.anchoredPosition =  rect.anchoredPosition;
+            */
 
+            for (int i = 0; i < positions.Length; i++)
+            {
+                if (positions[i].isOccupied == false)
+                {
+                    itemRectTransform.anchorMax = positions[i].transform.anchorMax;
+                    itemRectTransform.anchorMin = positions[i].transform.anchorMin;
+                    itemRectTransform.pivot = positions[i].transform.pivot;
+                    itemRectTransform.position = positions[i].transform.position;
+                    positions[i].isOccupied = true;
+                    positions[i].obj = itemRectTransform.gameObject;
+                    break;
+                }
+            }
+           
+           
 
             dragDrop.StartCoroutine(LockItem(dragDrop, 1));
             dragDrop.isSkewered = true;
 
 
-            currentItem = collision.gameObject;
+
+           // currentItem = collision.gameObject;
 
             print($"Item {collision.gameObject.name} added to the slot.");
 
@@ -62,30 +91,39 @@ public class ItemSlot : MonoBehaviour
     }
 
 
-    public void ClearSlot()
+    public void ClearSlot(int index)
     {
-        if (currentItem != null)
-        {
-
-            currentItem.transform.SetParent(null);
 
 
-            RectTransform itemRectTransform = currentItem.GetComponent<RectTransform>();
-            itemRectTransform.anchoredPosition = itemRectTransform.anchoredPosition;
+            positions[index].obj.transform.SetParent(transform.parent);
+            positions[index].obj.GetComponent<DragDrop>().isSkewered = false;
+
+            ingredientsContact.Remove(CheckIngredient(positions[index].obj));
+            positions[index].isOccupied = false;
+            positions[index].obj = null;
+
+       
+
+            /*  RectTransform itemRectTransform = currentItem.GetComponent<RectTransform>();
+              itemRectTransform.anchoredPosition = itemRectTransform.anchoredPosition;*/
 
 
-            currentItem = null;
+            //currentItem = null;
 
             print("Slot cleared.");
-        }
+        
     }
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == currentItem)
+        for (int i = 0; i < positions.Length; i++)
         {
-            ClearSlot();
+            if (positions[i].obj == collision.gameObject)
+            {
+                ClearSlot(i);
+                break;
+            }
         }
     }
 
