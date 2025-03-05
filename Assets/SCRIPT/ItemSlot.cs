@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemSlot : MonoBehaviour
 {
+    public List<int> ingredientsContact = new List<int>();
     private GameObject currentItem;
+    public OrderGenerator orderGenerator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,6 +36,14 @@ public class ItemSlot : MonoBehaviour
             currentItem = collision.gameObject;
 
             print($"Item {collision.gameObject.name} added to the slot.");
+
+            ingredientsContact.Add(CheckIngredient(collision.gameObject));
+
+            foreach (var item in ingredientsContact)
+            {
+                Debug.Log(item);
+            }
+
         }
     }
 
@@ -101,6 +112,10 @@ public class ItemSlot : MonoBehaviour
         else if (collidedIngredient.tag == "Corn")
         {
             return 7;
+        }
+        else if (collidedIngredient.tag == "Meatslab")
+        {
+            return 8;
         }
         return 0;
     }

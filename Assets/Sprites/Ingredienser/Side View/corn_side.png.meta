@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a688317ecef0ab45a70e0c716644289
+guid: 82a811ac827d7ea449d8af001c516506
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6628507585336416000
-    second: Ringklocka_0
+      213: 4856592267985944425
+    second: corn_side_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ringklocka_0
+      name: corn_side_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 139
-        width: 640
-        height: 432
+        x: 9
+        y: 23
+        width: 46
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00795fe87803dfb50800000000000000
-      internalID: 6628507585336416000
+      spriteID: 96ff538bfe4166340800000000000000
+      internalID: 4856592267985944425
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ringklocka_0: 6628507585336416000
+      corn_side_0: 4856592267985944425
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

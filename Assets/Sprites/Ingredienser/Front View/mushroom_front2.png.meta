@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a688317ecef0ab45a70e0c716644289
+guid: 1025893dd3174444d96f0b00b3e23679
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6628507585336416000
-    second: Ringklocka_0
+      213: -7245040865967358627
+    second: mushroom_front2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ringklocka_0
+      name: mushroom_front2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 139
-        width: 640
-        height: 432
+        x: 59
+        y: 49
+        width: 522
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00795fe87803dfb50800000000000000
-      internalID: 6628507585336416000
+      spriteID: d5db3d0e7b1747b90800000000000000
+      internalID: -7245040865967358627
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ringklocka_0: 6628507585336416000
+      mushroom_front2_0: -7245040865967358627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

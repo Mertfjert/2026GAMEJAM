@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrderGenerator : MonoBehaviour
 {
-    List<int> generatedOrder = new List<int>();
+    public List<int> generatedOrder = new List<int>();
     public ItemSlot itemSlot;
 
     private void Start()
@@ -61,6 +61,10 @@ public class OrderGenerator : MonoBehaviour
                     generateOrder.Add(ingredientNumber);
                     break;
                 case 7:
+                    // return corn
+                    generateOrder.Add(ingredientNumber);
+                    break;
+                case 8:
                     // return corn
                     generateOrder.Add(ingredientNumber);
                     break;
