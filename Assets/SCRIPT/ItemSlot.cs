@@ -80,6 +80,15 @@ public class ItemSlot : MonoBehaviour
     private void Update()
     {
         CheckCompletion(ingredientsContact);
+        for (int i = 0; i < positions.Length; i++)
+       {
+
+           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 1)
+           {
+               ClearSlot(i);
+               break;
+           }
+       }
     }
 
 
@@ -117,14 +126,14 @@ public class ItemSlot : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        for (int i = 0; i < positions.Length; i++)
+       /* for (int i = 0; i < positions.Length; i++)
         {
             if (positions[i].obj == collision.gameObject)
             {
                 ClearSlot(i);
                 break;
             }
-        }
+        }*/
     }
 
     private int CheckIngredient(GameObject collidedIngredient)
