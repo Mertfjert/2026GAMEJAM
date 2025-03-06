@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -15,10 +16,15 @@ public class ItemSlot : MonoBehaviour
     public List<int> ingredientsContact = new List<int>();
     public SkewerPosition[] positions;
     private GameObject currentItem;
-    public OrderGenerator orderGenerator;
-   
-    
+    public GameObject currentOrderGenerator;
+    public GameObject orderGeneratorPrefab;
 
+
+
+    private void Awake()
+    {
+        currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -72,14 +78,16 @@ public class ItemSlot : MonoBehaviour
             {
                 Debug.Log(item);
             }
-            CheckCompletion(ingredientsContact);
+            CheckCompletion(ingredientsContact, orderGeneratorPrefab);
+            
 
         }
     }
 
     private void Update()
     {
-        CheckCompletion(ingredientsContact);
+        currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
+        CheckCompletion(ingredientsContact, orderGeneratorPrefab);
         for (int i = 0; i < positions.Length; i++)
        {
 
@@ -173,11 +181,16 @@ public class ItemSlot : MonoBehaviour
         return 0;
     }
 
-    private void CheckCompletion(List<int> ingredientsOnSkewer)
+    private void CheckCompletion(List<int> ingredientsOnSkewer, GameObject newOrderGenerator)
     {
-        if (ingredientsOnSkewer == orderGenerator.generatedOrder)
+
+        if (ingredientsOnSkewer.SequenceEqual(currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder))
         {
-            Destroy(orderGenerator);
+            Debug.Log("Gameobject deleted");
+            Destroy(currentOrderGenerator);
+            ingredientsOnSkewer.Clear();
+            Instantiate(newOrderGenerator);
+            
         }
     }
 }

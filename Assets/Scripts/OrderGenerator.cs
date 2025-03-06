@@ -10,13 +10,12 @@ public class OrderGenerator : MonoBehaviour
     public ItemSlot itemSlot;
     public TMP_Text orderText;
 
-    private void Start()
+
+    private void Awake()
     {
         orderText = GameObject.Find("OrderText").GetComponent<TMP_Text>();
         itemSlot = GameObject.Find("ItemSlot").GetComponent<ItemSlot>();
         generatedOrder = GenerateOrder();
-        
-
     }
     private void Update()
     {

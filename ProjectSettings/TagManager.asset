@@ -12,6 +12,7 @@ TagManager:
   - Bell Pepper
   - Corn
   - Meatslab
+  - Order Generator
   layers:
   - Default
   - TransparentFX
