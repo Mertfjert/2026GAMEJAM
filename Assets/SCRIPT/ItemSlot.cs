@@ -19,6 +19,15 @@ public class ItemSlot : MonoBehaviour
    
     
 
+    public ScoreSystem scoreSystem;
+
+
+
+    private void Awake()
+    {
+        currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
+        scoreSystem = GameObject.FindGameObjectWithTag("Score System").GetComponent<ScoreSystem>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -177,7 +186,12 @@ public class ItemSlot : MonoBehaviour
     {
         if (ingredientsOnSkewer == orderGenerator.generatedOrder)
         {
-            Destroy(orderGenerator);
+            Debug.Log("Gameobject deleted");
+            Destroy(currentOrderGenerator);
+            ingredientsOnSkewer.Clear();
+            Instantiate(newOrderGenerator);
+            scoreSystem.IncreaseScore();
+            
         }
     }
 }
