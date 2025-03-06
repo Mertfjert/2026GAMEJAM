@@ -92,8 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientsContact: 
   positions: []
-  orderGenerator: {fileID: 0}
-  orderGeneratorPrefab: {fileID: 9050611982391222603, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+  currentOrderGenerator: {fileID: 0}
+  newOrderGenerator: {fileID: 9050611982391222603, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+  scoreSystem: {fileID: 0}
 --- !u!61 &5184549964282743741
 BoxCollider2D:
   m_ObjectHideFlags: 0

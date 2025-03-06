@@ -31,7 +31,7 @@ public class OrderGenerator : MonoBehaviour
     {
         int orderLength = UnityEngine.Random.Range(3, 8);
         List<int> generateOrder = new List<int>();
-        orderText.text = "Order: ";
+        
 
         for (int i = 0; i < orderLength; i++)
         {
