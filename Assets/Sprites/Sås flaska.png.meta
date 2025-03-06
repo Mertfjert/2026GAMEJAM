@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ea23c1063b57ca94dbd38207cbf34c66
+guid: 820a9b1215bd15647b49a6a99fd180fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4328999540377488606
-    second: skewerboi_1_0
+      213: -8019193973940686018
+    second: "S\xE5s flaska_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skewerboi_1_0
+      name: "S\xE5s flaska_0"
       rect:
         serializedVersion: 2
         x: 23
-        y: 1
-        width: 11
-        height: 126
+        y: 18
+        width: 17
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22378f2aadd4ce3c0800000000000000
-      internalID: -4328999540377488606
+      spriteID: e33ff46719916b090800000000000000
+      internalID: -8019193973940686018
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      skewerboi_1_0: -4328999540377488606
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
