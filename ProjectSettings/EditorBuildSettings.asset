@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Alex Scene.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: fc6f0ee6cac7abb43aa955e1e3b74ff0
+  - enabled: 1
+    path: Assets/Scenes/Main Scene.unity
+    guid: e2589ce518e6a594db901dfb0fc1beb2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

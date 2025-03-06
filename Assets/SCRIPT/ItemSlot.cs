@@ -17,7 +17,10 @@ public class ItemSlot : MonoBehaviour
     public SkewerPosition[] positions;
     private GameObject currentItem;
     public GameObject currentOrderGenerator;
-    public GameObject orderGeneratorPrefab;
+    public GameObject newOrderGenerator;
+
+
+
 
     public ScoreSystem scoreSystem;
 
@@ -81,8 +84,7 @@ public class ItemSlot : MonoBehaviour
             {
                 Debug.Log(item);
             }
-            CheckCompletion(ingredientsContact, orderGeneratorPrefab);
-            
+            CheckCompletion(ingredientsContact, newOrderGenerator);
 
         }
     }
@@ -90,7 +92,7 @@ public class ItemSlot : MonoBehaviour
     private void Update()
     {
         currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
-        CheckCompletion(ingredientsContact, orderGeneratorPrefab);
+        CheckCompletion(ingredientsContact, newOrderGenerator);
         for (int i = 0; i < positions.Length; i++)
        {
 
@@ -186,7 +188,6 @@ public class ItemSlot : MonoBehaviour
 
     private void CheckCompletion(List<int> ingredientsOnSkewer, GameObject newOrderGenerator)
     {
-
         if (ingredientsOnSkewer.SequenceEqual(currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder))
         {
             Debug.Log("Gameobject deleted");
