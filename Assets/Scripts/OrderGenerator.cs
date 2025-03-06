@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Switch;
 
 public class OrderGenerator : MonoBehaviour
 {
@@ -10,13 +11,23 @@ public class OrderGenerator : MonoBehaviour
     public ItemSlot itemSlot;
     public TMP_Text orderText;
 
+    public SpriteRenderer customerSpriteRenderer;
+    public Sprite customerSprite1;
+    public Sprite customerSprite2;
+    public Sprite customerSprite3;
+    public Sprite customerSprite4;
 
-    private void Awake()
+
+
+
+    private void Start()
     {
         orderText = GameObject.Find("OrderText").GetComponent<TMP_Text>();
         itemSlot = GameObject.Find("ItemSlot").GetComponent<ItemSlot>();
+        customerSpriteRenderer = GameObject.FindGameObjectWithTag("CustomerIcon").GetComponent<SpriteRenderer>();
         generatedOrder = GenerateOrder();
     }
+
     private void Update()
     {
         foreach (var item in generatedOrder)
@@ -30,14 +41,35 @@ public class OrderGenerator : MonoBehaviour
     public List<int> GenerateOrder()
     {
         int orderLength = UnityEngine.Random.Range(3, 8);
+        int customer = UnityEngine.Random.Range(1, 4);
         List<int> generateOrder = new List<int>();
-        
+
+        // Väljer customer icon
+        switch (customer)
+        {
+            case 1:
+                customerSpriteRenderer.sprite = customerSprite1;
+                break;
+            case 2:
+                customerSpriteRenderer.sprite = customerSprite2;
+                break;
+            case 3:
+                customerSpriteRenderer.sprite = customerSprite3;
+                break;
+            case 4:
+                customerSpriteRenderer.sprite = customerSprite4;
+                break;
+        }
+
 
         for (int i = 0; i < orderLength; i++)
         {
             int ingredientNumber = UnityEngine.Random.Range(1, 7);
-            
 
+
+
+            
+            // Väljer ingredienser
             switch (ingredientNumber)
             {
                 case 1:

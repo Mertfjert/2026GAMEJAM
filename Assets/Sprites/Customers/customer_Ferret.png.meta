@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fed7c3c7b0f7b1848b19664ebee2337a
+guid: 01ee0060b70d1bc4b867fa7376670bee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1709123609424707961
-    second: Close button-1.png_0
+      213: 753400874557154433
+    second: customer_Ferret_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Close button-1.png_0
+      name: customer_Ferret_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 68
-        width: 24
-        height: 17
+        x: 39
+        y: 0
+        width: 562
+        height: 571
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9714ef01ed608b710800000000000000
-      internalID: 1709123609424707961
+      spriteID: 184a27d8a1e947a00800000000000000
+      internalID: 753400874557154433
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Close button-1.png_0: 1709123609424707961
+      customer_Ferret_0: 753400874557154433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
