@@ -93,6 +93,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7994962592344142796, guid: 1e5e343f49f05c449af951942776d75e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7349726226647489456, guid: e6de8681bb9739b4fb7a18b5ca5b9586, type: 3}
+    - target: {fileID: 7994962592344142796, guid: 1e5e343f49f05c449af951942776d75e, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -106,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8643843377809821703, guid: 1e5e343f49f05c449af951942776d75e, type: 3}
       propertyPath: m_Name
-      value: Tomat
+      value: Tomat 1
       objectReference: {fileID: 0}
     - target: {fileID: 8643843377809821703, guid: 1e5e343f49f05c449af951942776d75e, type: 3}
       propertyPath: m_TagString
