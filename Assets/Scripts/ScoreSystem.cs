@@ -12,12 +12,14 @@ public class ScoreSystem : MonoBehaviour
         scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
     }
 
+    // Lägger till +1 i score texten
     public void IncreaseScore()
     {
         scoreKeeper += 1;
         scoreText.text = "Score: " + scoreKeeper.ToString();
     }
 
+    // Lägger till -1 i score texten
     public void DecreaseScore()
     {
         scoreKeeper -= 1;

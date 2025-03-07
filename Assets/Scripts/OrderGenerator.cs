@@ -7,15 +7,17 @@ using UnityEngine.InputSystem.Switch;
 
 public class OrderGenerator : MonoBehaviour
 {
+    // Listan för skapade order
     public List<int> generatedOrder = new List<int>();
+
+
     public TMP_Text orderText;
 
+    // Sprites för kunder
     public SpriteRenderer customerSpriteRenderer;
     public List<Sprite> customerSprites = new List<Sprite>();
 
-
-
-
+    // Hittar alla variablar baserat på namn, samt generera en order
     private void Start()
     {
         orderText = GameObject.Find("OrderText").GetComponent<TMP_Text>();
@@ -23,23 +25,19 @@ public class OrderGenerator : MonoBehaviour
         generatedOrder = GenerateOrder();
     }
 
-    private void Update()
-    {
-        foreach (var item in generatedOrder)
-        {
-            Debug.Log(item);
-        }
-    }
 
 
-    // Genererar en array från 3 till 7 storlek
+    // Generera order och customer
     public List<int> GenerateOrder()
     {
+        // Randomiserar siffror som används senare
         int orderLength = UnityEngine.Random.Range(3, 8);
         int customer = UnityEngine.Random.Range(0, 2);
+
+        // Skapar en lista
         List<int> generateOrder = new List<int>();
 
-        // Väljer customer icon
+        // Väljer customer icon baserat på den randomiserade siffran
         switch (customer)
         {
             case 0:
@@ -55,12 +53,12 @@ public class OrderGenerator : MonoBehaviour
         }
 
 
+        // För antal värde i den randomiserade siffrar körs koden så många gånger
         for (int i = 0; i < orderLength; i++)
         {
+
+            // Slumpar ingredienser baserat på siffra
             int ingredientNumber = UnityEngine.Random.Range(1, 7);
-
-
-
             
             // Väljer ingredienser
             switch (ingredientNumber)
