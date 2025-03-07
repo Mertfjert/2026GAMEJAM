@@ -100,9 +100,11 @@ public class ItemSlot : MonoBehaviour
     private void Update()
     {
         
-
+        // Kollar om det är klart
         currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
         CheckCompletion(ingredientsContact, newOrderGenerator);
+
+
         for (int i = 0; i < positions.Length; i++)
        {
 
@@ -159,6 +161,7 @@ public class ItemSlot : MonoBehaviour
         }*/
     }
 
+    // Kollar vilken ingredient det är och lägger till i listan
     private int CheckIngredient(GameObject collidedIngredient)
     {
         if (collidedIngredient.tag == "Zucchini")
@@ -196,6 +199,7 @@ public class ItemSlot : MonoBehaviour
         return 0;
     }
 
+    // Kollar om listan är lika med varandra
     private void CheckCompletion(List<int> ingredientsOnSkewer, GameObject newOrderGenerator)
     {
         if (ingredientsOnSkewer.SequenceEqual(currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder))
