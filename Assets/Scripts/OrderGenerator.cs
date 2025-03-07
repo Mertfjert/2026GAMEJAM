@@ -32,7 +32,7 @@ public class OrderGenerator : MonoBehaviour
     {
         // Randomiserar siffror som används senare
         int orderLength = UnityEngine.Random.Range(3, 8);
-        int customer = UnityEngine.Random.Range(0, 2);
+        int customer = UnityEngine.Random.Range(0, 5);
 
         // Skapar en lista
         List<int> generateOrder = new List<int>();
@@ -47,6 +47,15 @@ public class OrderGenerator : MonoBehaviour
                 customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
             case 2:
+                customerSpriteRenderer.sprite = customerSprites[customer];
+                break;
+            case 3:
+                customerSpriteRenderer.sprite = customerSprites[customer];
+                break;
+            case 4:
+                customerSpriteRenderer.sprite = customerSprites[customer];
+                break;
+            case 5:
                 customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
 
