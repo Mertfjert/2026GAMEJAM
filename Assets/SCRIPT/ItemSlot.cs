@@ -89,8 +89,18 @@ public class ItemSlot : MonoBehaviour
         }
     }
 
+    public void ResetIngredientsPos()
+    {
+        for (int i = 0; i < positions.Length; i++)
+        {
+            positions[i].obj.transform.position = positions[i].transform.position;
+        }
+    }
+
     private void Update()
     {
+        
+
         currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
         CheckCompletion(ingredientsContact, newOrderGenerator);
         for (int i = 0; i < positions.Length; i++)
