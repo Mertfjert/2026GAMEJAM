@@ -17,4 +17,11 @@ public class ScoreSystem : MonoBehaviour
         scoreText.text = "Score: " + scoreKeeper.ToString();
     }
 
+    public void DecreaseScore()
+    {
+        scoreKeeper -= 1;
+        scoreText.text = "Score: " + scoreKeeper.ToString();
+    }
+
+
 }

@@ -8,7 +8,6 @@ using UnityEngine.InputSystem.Switch;
 public class OrderGenerator : MonoBehaviour
 {
     public List<int> generatedOrder = new List<int>();
-    public ItemSlot itemSlot;
     public TMP_Text orderText;
 
     public SpriteRenderer customerSpriteRenderer;
@@ -20,7 +19,6 @@ public class OrderGenerator : MonoBehaviour
     private void Start()
     {
         orderText = GameObject.Find("OrderText").GetComponent<TMP_Text>();
-        itemSlot = GameObject.Find("ItemSlot").GetComponent<ItemSlot>();
         customerSpriteRenderer = GameObject.FindGameObjectWithTag("CustomerIcon").GetComponent<SpriteRenderer>();
         generatedOrder = GenerateOrder();
     }
@@ -38,27 +36,22 @@ public class OrderGenerator : MonoBehaviour
     public List<int> GenerateOrder()
     {
         int orderLength = UnityEngine.Random.Range(3, 8);
-        int customer = UnityEngine.Random.Range(1, 4);
+        int customer = UnityEngine.Random.Range(0, 2);
         List<int> generateOrder = new List<int>();
 
         // Väljer customer icon
         switch (customer)
         {
+            case 0:
+                customerSpriteRenderer.sprite = customerSprites[customer];
+                break;
             case 1:
                 customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
             case 2:
                 customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
-            case 3:
-                customerSpriteRenderer.sprite = customerSprites[customer];
-                break;
-            case 4:
-                customerSpriteRenderer.sprite = customerSprites[customer];
-                break;
-            case 5:
-                customerSpriteRenderer.sprite = customerSprites[customer];
-                break;
+
         }
 
 
