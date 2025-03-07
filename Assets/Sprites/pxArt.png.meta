@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a0543c4e678a8fa4aa198252af5f7e8a
+guid: 6368c8b117084924d9d5bb5e8368bcc8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7538313494558212383
-    second: Small_Quit_Button_0
+      213: -76982044855044179
+    second: pxArt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Small_Quit_Button_0
+      name: pxArt_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 369
-        width: 1172
-        height: 812
+        x: 0
+        y: 0
+        width: 64
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1eef25ff0d7826790800000000000000
-      internalID: -7538313494558212383
+      spriteID: da7f452fc318eeef0800000000000000
+      internalID: -76982044855044179
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Small_Quit_Button_0: -7538313494558212383
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
