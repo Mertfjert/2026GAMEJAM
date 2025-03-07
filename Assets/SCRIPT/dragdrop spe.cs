@@ -14,6 +14,7 @@ public class SpettDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Vector3 startPosition;    // Ursprungsposition för spättet
     private CanvasGroup canvasGroup;  // Hantera transparens och raycasts
     ItemSlot slot;
+    bool isLocked;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class SpettDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (isLocked) return;
         if (canDrag)
         {
             Debug.Log("Spättet börjar dras!");  // 🛠 TEST: Se om detta dyker upp i Console
@@ -42,9 +44,16 @@ public class SpettDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
     }
 
+    public void SetLock(bool lockStatus)
+    {
+        isLocked = lockStatus;
+        Debug.Log("Lock status ändrad till: " + lockStatus);
+    }
+
     // 🛠 FIX: Använder eventData.position för Canvas med Screen Space - Overlay
     public void OnDrag(PointerEventData eventData)
     {
+        if (isLocked) return;
         if (canDrag)
         {
             // Flytta spättet till musens position med eventData.position

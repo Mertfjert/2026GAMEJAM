@@ -1,46 +1,48 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
-public class SkewerPosition
+public class GrillPosition
 {
-   public RectTransform transform;
-   public bool isOccupied;
-   public GameObject obj;
+    public RectTransform transform;
+    public bool isOccupied;
+    public ItemSlot obj;
 }
 
-
-public class ItemSlot : MonoBehaviour
+public class Grill : MonoBehaviour
 {
-    public List<int> ingredientsContact = new List<int>();
-    public SkewerPosition[] positions;
-    private GameObject currentItem;
+    //public List<int> ingredientsContact = new List<int>();
+    public GrillPosition[] positions;
+   
+    
+    
+    /*private GameObject currentItem;
     public GameObject currentOrderGenerator;
     public GameObject newOrderGenerator;
 
 
 
-    public ScoreSystem scoreSystem;
+
+    public ScoreSystem scoreSystem;*/
 
 
 
     private void Awake()
     {
-        currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
-        scoreSystem = GameObject.FindGameObjectWithTag("Score System").GetComponent<ScoreSystem>();
+       /* currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
+        scoreSystem = GameObject.FindGameObjectWithTag("Score System").GetComponent<ScoreSystem>();*/
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.TryGetComponent<DragDrop>(out DragDrop dragDrop))
+        print("kollision");
+        if (collision.gameObject.TryGetComponent<ItemSlot>(out ItemSlot skewer))
         {
-
-          /*  if (currentItem != null)
-            {
-                print("Slot already contains an item!");
-                return;
-            }*/
+            print("skewer");
+            /*  if (currentItem != null)
+              {
+                  print("Slot already contains an item!");
+                  return;
+              }*/
 
 
             RectTransform itemRectTransform = collision.gameObject.GetComponent<RectTransform>();
@@ -54,6 +56,7 @@ public class ItemSlot : MonoBehaviour
 
             for (int i = 0; i < positions.Length; i++)
             {
+                print("kollar platser");
                 if (positions[i].isOccupied == false)
                 {
                     itemRectTransform.anchorMax = positions[i].transform.anchorMax;
@@ -61,34 +64,34 @@ public class ItemSlot : MonoBehaviour
                     itemRectTransform.pivot = positions[i].transform.pivot;
                     itemRectTransform.position = positions[i].transform.position;
                     positions[i].isOccupied = true;
-                    positions[i].obj = itemRectTransform.gameObject;
+                    positions[i].obj = skewer;
                     break;
                 }
             }
-           
-           
-
-            dragDrop.StartCoroutine(LockItem(dragDrop, 1));
-            dragDrop.isSkewered = true;
 
 
 
-           // currentItem = collision.gameObject;
+            StartCoroutine(LockItem(skewer, 1));
+           // dragDrop.isSkewered = true;
+
+
+
+            // currentItem = collision.gameObject;
 
             print($"Item {collision.gameObject.name} added to the slot.");
 
-            ingredientsContact.Add(CheckIngredient(collision.gameObject));
+           // ingredientsContact.Add(CheckIngredient(collision.gameObject));
 
-            foreach (var item in ingredientsContact)
+          /*  foreach (var item in ingredientsContact)
             {
                 Debug.Log(item);
             }
-            CheckCompletion(ingredientsContact, newOrderGenerator);
+            CheckCompletion(ingredientsContact, newOrderGenerator);*/
 
         }
     }
 
-    public void ResetIngredientsPos()
+   public void ResetSkewersPos()
     {
         for (int i = 0; i < positions.Length; i++)
         {
@@ -98,29 +101,33 @@ public class ItemSlot : MonoBehaviour
 
     private void Update()
     {
-        
+
         // Kollar om det är klart
-        currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
-        CheckCompletion(ingredientsContact, newOrderGenerator);
+       /* currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
+        CheckCompletion(ingredientsContact, newOrderGenerator);*/
 
 
         for (int i = 0; i < positions.Length; i++)
-       {
-
-           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 1)
-           {
-               ClearSlot(i);
-               break;
-           }
-       }
+        {
+            if (positions[i].obj != null)
+            {
+                if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 1)
+                {
+                    ClearSlot(i);
+                    break;
+                }
+            }
+          
+        }
     }
 
 
-    private System.Collections.IEnumerator LockItem(DragDrop dragDrop, float duration)
+    private System.Collections.IEnumerator LockItem(ItemSlot slot, float duration) //Kanske vill ändra
     {
-        dragDrop.SetLock(true);
+        SpettDragDrop spett = slot.gameObject.GetComponent<SpettDragDrop>();
+        spett.SetLock(true);
         yield return new WaitForSeconds(duration);
-        dragDrop.SetLock(false);
+        spett.SetLock(false);
     }
 
 
@@ -128,41 +135,39 @@ public class ItemSlot : MonoBehaviour
     {
 
 
-            positions[index].obj.transform.SetParent(transform.parent);
-            positions[index].obj.GetComponent<DragDrop>().isSkewered = false;
+        positions[index].obj.transform.SetParent(transform.parent);
+      //  positions[index].obj.GetComponent<DragDrop>().isSkewered = false;
 
-            ingredientsContact.Remove(CheckIngredient(positions[index].obj));
-            positions[index].isOccupied = false;
-            positions[index].obj = null;
-
-       
-
-            /*  RectTransform itemRectTransform = currentItem.GetComponent<RectTransform>();
-              itemRectTransform.anchoredPosition = itemRectTransform.anchoredPosition;*/
+       // ingredientsContact.Remove(CheckIngredient(positions[index].obj));
+        positions[index].isOccupied = false;
+        positions[index].obj = null;
 
 
-            //currentItem = null;
 
-            print("Slot cleared.");
-        
+        /*  RectTransform itemRectTransform = currentItem.GetComponent<RectTransform>();
+          itemRectTransform.anchoredPosition = itemRectTransform.anchoredPosition;*/
+
+
+        //currentItem = null;
+
+        print("Slot cleared.");
+
     }
-
- 
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-       /* for (int i = 0; i < positions.Length; i++)
-        {
-            if (positions[i].obj == collision.gameObject)
-            {
-                ClearSlot(i);
-                break;
-            }
-        }*/
+        /* for (int i = 0; i < positions.Length; i++)
+         {
+             if (positions[i].obj == collision.gameObject)
+             {
+                 ClearSlot(i);
+                 break;
+             }
+         }*/
     }
 
-    // Kollar vilken ingredient det är och lägger till i listan
+  /*  // Kollar vilken ingredient det är och lägger till i listan
     private int CheckIngredient(GameObject collidedIngredient)
     {
         if (collidedIngredient.tag == "Zucchini")
@@ -210,7 +215,7 @@ public class ItemSlot : MonoBehaviour
             ingredientsOnSkewer.Clear();
             Instantiate(newOrderGenerator);
             scoreSystem.IncreaseScore();
-            
+
         }
         if (ingredientsOnSkewer.Count == currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder.Count)
         {
@@ -221,5 +226,5 @@ public class ItemSlot : MonoBehaviour
             scoreSystem.DecreaseScore();
 
         }
-    }
+    }*/
 }
