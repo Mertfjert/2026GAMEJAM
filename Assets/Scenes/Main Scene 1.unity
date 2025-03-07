@@ -6274,6 +6274,26 @@ PrefabInstance:
       propertyPath: orderText
       value: 
       objectReference: {fileID: 290725285}
+    - target: {fileID: 2755938304818985532, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+      propertyPath: customerSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755938304818985532, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+      propertyPath: 'customerSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 753400874557154433, guid: 01ee0060b70d1bc4b867fa7376670bee, type: 3}
+    - target: {fileID: 2755938304818985532, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+      propertyPath: 'customerSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -7027528018125217640, guid: 9b152dff788196c46b26b906eb53aafd, type: 3}
+    - target: {fileID: 2755938304818985532, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+      propertyPath: 'customerSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3866894292358153085, guid: e25412b315fe73e40b456883aaf8641b, type: 3}
+    - target: {fileID: 2755938304818985532, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
+      propertyPath: 'customerSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 6244409342428467632, guid: 410d63d584390e943bed69d87ba6d204, type: 3}
     - target: {fileID: 8289631518227454629, guid: 86363e522d3d5eb4098f9c6ca9340db3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -420.38

@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generatedOrder: 
-  itemSlot: {fileID: 0}
   orderText: {fileID: 0}
   customerSpriteRenderer: {fileID: 0}
-  customerSprite1: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
-  customerSprite2: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
-  customerSprite3: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
-  customerSprite4: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
+  customerSprites:
+  - {fileID: 753400874557154433, guid: 01ee0060b70d1bc4b867fa7376670bee, type: 3}
+  - {fileID: -7027528018125217640, guid: 9b152dff788196c46b26b906eb53aafd, type: 3}
+  - {fileID: 3866894292358153085, guid: e25412b315fe73e40b456883aaf8641b, type: 3}
+  - {fileID: 110063094613122208, guid: 9bc2aaedc9d25c440bf8d0b84f4616ea, type: 3}
+  - {fileID: 2057516106615078274, guid: 20876e216d73efc4ab8b5faae54f1373, type: 3}
+  - {fileID: -6981641179300335697, guid: 45b98b2be97becf4dabed51cd8d8013e, type: 3}
