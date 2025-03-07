@@ -12,10 +12,7 @@ public class OrderGenerator : MonoBehaviour
     public TMP_Text orderText;
 
     public SpriteRenderer customerSpriteRenderer;
-    public Sprite customerSprite1;
-    public Sprite customerSprite2;
-    public Sprite customerSprite3;
-    public Sprite customerSprite4;
+    public List<Sprite> customerSprites = new List<Sprite>();
 
 
 
@@ -48,16 +45,19 @@ public class OrderGenerator : MonoBehaviour
         switch (customer)
         {
             case 1:
-                customerSpriteRenderer.sprite = customerSprite1;
+                customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
             case 2:
-                customerSpriteRenderer.sprite = customerSprite2;
+                customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
             case 3:
-                customerSpriteRenderer.sprite = customerSprite3;
+                customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
             case 4:
-                customerSpriteRenderer.sprite = customerSprite4;
+                customerSpriteRenderer.sprite = customerSprites[customer];
+                break;
+            case 5:
+                customerSpriteRenderer.sprite = customerSprites[customer];
                 break;
         }
 
