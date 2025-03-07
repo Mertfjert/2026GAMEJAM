@@ -301,13 +301,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67234521}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &84298190
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,13 +834,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192235509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &266760065
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,13 +885,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266760065}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &360037600
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 360037601}
+  - component: {fileID: 360037602}
   m_Layer: 5
   m_Name: Pos7
   m_TagString: Untagged
@@ -925,6 +929,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 25}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &360037602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360037600}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &451449662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,13 +1561,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554363092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &574271398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574271399}
+  - component: {fileID: 574271400}
   m_Layer: 5
   m_Name: Pos1
   m_TagString: Untagged
@@ -1584,6 +1605,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -125.3}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &574271400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574271398}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &627727214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,13 +1663,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627727214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &736085718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2050,8 @@ MonoBehaviour:
   - {fileID: 462116652}
   - {fileID: 1550650205}
   - {fileID: 1719657980}
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &958132058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086117443}
+  - component: {fileID: 1086117444}
   m_Layer: 5
   m_Name: Pos2
   m_TagString: Untagged
@@ -2335,6 +2375,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1086117444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086117442}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &1101468641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,6 +2684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1471097240}
+  - component: {fileID: 1471097241}
   m_Layer: 5
   m_Name: Pos3
   m_TagString: Untagged
@@ -2655,6 +2711,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1471097241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471097239}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &1511492751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,6 +2735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511492752}
+  - component: {fileID: 1511492753}
   m_Layer: 5
   m_Name: Pos5
   m_TagString: Untagged
@@ -2690,6 +2762,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1511492753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511492751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &1516499659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,13 +2959,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522406144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &1545119362
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,6 +3263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1660822616}
+  - component: {fileID: 1660822617}
   m_Layer: 5
   m_Name: Pos6
   m_TagString: Untagged
@@ -3201,6 +3290,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1660822617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660822615}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &1719657980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,6 +3462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798314146}
+  - component: {fileID: 1798314147}
   m_Layer: 5
   m_Name: Pos4
   m_TagString: Untagged
@@ -3384,6 +3489,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1798314147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798314145}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1 &2028535138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,13 +3834,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082054629}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52df2b0e19ce9a0409a58098c8f870a8, type: 3}
+  m_Script: {fileID: 11500000, guid: bb89f3617d0e30c4c8743b19261999c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkewered: 0
-  skewerSprite: {fileID: 0}
+  ingredients: []
+  minIngredients: 10
+  maxIngredients: 14
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
