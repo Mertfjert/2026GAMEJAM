@@ -48,7 +48,7 @@ MonoBehaviour:
   itemSlot: {fileID: 0}
   orderText: {fileID: 0}
   customerSpriteRenderer: {fileID: 0}
-  customerSprite1: {fileID: 753400874557154433, guid: 01ee0060b70d1bc4b867fa7376670bee, type: 3}
-  customerSprite2: {fileID: -7027528018125217640, guid: 9b152dff788196c46b26b906eb53aafd, type: 3}
-  customerSprite3: {fileID: 3866894292358153085, guid: e25412b315fe73e40b456883aaf8641b, type: 3}
-  customerSprite4: {fileID: -7874781089218769166, guid: 1c81aeb233a5b7a4c8924fe78e8059ed, type: 3}
+  customerSprite1: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
+  customerSprite2: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
+  customerSprite3: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
+  customerSprite4: {fileID: 5435608014139152121, guid: bce550973b4e2a346b808659752dc40e, type: 3}
