@@ -36,12 +36,18 @@ public class ItemSlot : MonoBehaviour
         if (collision.gameObject.TryGetComponent<DragDrop>(out DragDrop dragDrop))
         {
 
-          /*  if (currentItem != null)
+            /*  if (currentItem != null)
+              {
+                  print("Slot already contains an item!");
+                  return;
+              }*/
+            for (int i = 0; i < positions.Length; i++)
             {
-                print("Slot already contains an item!");
-                return;
-            }*/
-
+                if (positions[i].obj == dragDrop.gameObject)
+                {
+                    return;
+                }
+            }
 
             RectTransform itemRectTransform = collision.gameObject.GetComponent<RectTransform>();
             // RectTransform rect = GetComponent<RectTransform>();
@@ -101,13 +107,13 @@ public class ItemSlot : MonoBehaviour
         
         // Kollar om det är klart
         currentOrderGenerator = GameObject.FindGameObjectWithTag("Order Generator");
-        CheckCompletion(ingredientsContact, newOrderGenerator);
+       // CheckCompletion(ingredientsContact, newOrderGenerator);
 
 
         for (int i = 0; i < positions.Length; i++)
        {
 
-           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 1)
+           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 100)
            {
                ClearSlot(i);
                break;
@@ -211,6 +217,7 @@ public class ItemSlot : MonoBehaviour
             Instantiate(newOrderGenerator);
             currentOrderGenerator.GetComponent<OrderGenerator>().orderText.text = " ";
             scoreSystem.IncreaseScore();
+            DeleteSkewerIngredients();
             
         }
         else if (ingredientsOnSkewer.Count == currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder.Count)
@@ -221,7 +228,15 @@ public class ItemSlot : MonoBehaviour
             Instantiate(newOrderGenerator);
             currentOrderGenerator.GetComponent<OrderGenerator>().orderText.text = " ";
             scoreSystem.DecreaseScore();
+            DeleteSkewerIngredients();
+        }
+    }
 
+    void DeleteSkewerIngredients()
+    {
+        for (int i = 0; i < positions.Length; i++)
+        {
+            Destroy(positions[i].obj);
         }
     }
 }
