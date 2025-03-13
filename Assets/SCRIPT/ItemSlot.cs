@@ -209,15 +209,17 @@ public class ItemSlot : MonoBehaviour
             Destroy(currentOrderGenerator);
             ingredientsOnSkewer.Clear();
             Instantiate(newOrderGenerator);
+            currentOrderGenerator.GetComponent<OrderGenerator>().orderText.text = " ";
             scoreSystem.IncreaseScore();
             
         }
-        if (ingredientsOnSkewer.Count == currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder.Count)
+        else if (ingredientsOnSkewer.Count == currentOrderGenerator.GetComponent<OrderGenerator>().generatedOrder.Count)
         {
             Debug.Log("Gameobject deleted");
             Destroy(currentOrderGenerator);
             ingredientsOnSkewer.Clear();
             Instantiate(newOrderGenerator);
+            currentOrderGenerator.GetComponent<OrderGenerator>().orderText.text = " ";
             scoreSystem.DecreaseScore();
 
         }
