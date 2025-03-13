@@ -110,11 +110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8643843377809821703, guid: 1e5e343f49f05c449af951942776d75e, type: 3}
       propertyPath: m_Name
-      value: Tomat 1
+      value: MEAT
       objectReference: {fileID: 0}
     - target: {fileID: 8643843377809821703, guid: 1e5e343f49f05c449af951942776d75e, type: 3}
       propertyPath: m_TagString
-      value: Tomato
+      value: Meatslab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
