@@ -59,10 +59,12 @@ public class Grill : MonoBehaviour
                 print("kollar platser");
                 if (positions[i].isOccupied == false)
                 {
+                    skewer.ResetIngredientsPos();
                     itemRectTransform.anchorMax = positions[i].transform.anchorMax;
                     itemRectTransform.anchorMin = positions[i].transform.anchorMin;
                     itemRectTransform.pivot = positions[i].transform.pivot;
                     itemRectTransform.position = positions[i].transform.position;
+                    skewer.ResetIngredientsPos();
                     positions[i].isOccupied = true;
                     positions[i].obj = skewer;
                     break;
