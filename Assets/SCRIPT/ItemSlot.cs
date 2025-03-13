@@ -113,7 +113,7 @@ public class ItemSlot : MonoBehaviour
         for (int i = 0; i < positions.Length; i++)
        {
 
-           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 100)
+           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 85)
            {
                ClearSlot(i);
                break;
