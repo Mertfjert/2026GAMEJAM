@@ -2266,7 +2266,7 @@ MonoBehaviour:
   - {fileID: 698539060}
   - {fileID: 879687071}
   - {fileID: 90286919}
-  minIngredients: 1
+  minIngredients: 0
   maxIngredients: 14
 --- !u!225 &250121054
 CanvasGroup:

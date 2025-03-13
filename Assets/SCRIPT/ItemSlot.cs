@@ -98,7 +98,11 @@ public class ItemSlot : MonoBehaviour
     {
         for (int i = 0; i < positions.Length; i++)
         {
-            positions[i].obj.transform.position = positions[i].transform.position;
+            if (positions[i].obj != null)
+            {
+                positions[i].obj.transform.position = positions[i].transform.position;
+            }
+            
         }
     }
 
@@ -112,12 +116,16 @@ public class ItemSlot : MonoBehaviour
 
         for (int i = 0; i < positions.Length; i++)
        {
-
-           if (Vector2.Distance(positions[i].transform.position, positions[i].obj.transform.position) > 85)
-           {
-               ClearSlot(i);
-               break;
-           }
+            if (positions[i].obj != null)
+            {
+                if (Vector2.Distance(transform.localPosition, positions[i].obj.transform.localPosition) > 200)
+                {
+                    print($"Distance: {Vector2.Distance(positions[i].transform.localPosition, positions[i].obj.transform.localPosition)}");
+                    ClearSlot(i);
+                    break;
+                }
+            }
+         
        }
     }
 
